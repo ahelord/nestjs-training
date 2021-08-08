@@ -60,3 +60,13 @@ $ nest info
       │ sub-app       │ app         │ Generate a new application within a monorepo │
       │ resource      │ res         │ Generate a new CRUD resource                 │
 ```
+
+# dependecy injection
+- One object  can supply dependencies to another object
+
+# ts-node
+- It JIT transforms TypeScript into JavaScript, enabling 
+you to directly execute TypeScript on Node.js without precompiling.
+This is accomplished by hooking node's module loading APIs, 
+enabling it to be used seamlessly alongside other Node.js tools and libraries.
+  
