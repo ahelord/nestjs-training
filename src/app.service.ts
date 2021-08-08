@@ -10,6 +10,7 @@ export class AppService {
     return 'Hello World! nestjs  ';
   }
   getTime(): Date {
-    return new Date();
+    const now = new Date();
+    return now;
   }
 }
