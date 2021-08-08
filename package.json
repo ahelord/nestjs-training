@@ -1,10 +1,10 @@
 {
   "name": "nestjs-training",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Repositorio para aprender Nest.js",
+  "author": "ahelord",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
