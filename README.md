@@ -35,6 +35,7 @@ $ npm run test:cov
 $ nest info
 
 # generate commands
+```
   generate|g [options] <schematic> [name] [path]  Generate a Nest element.
     Available schematics:
       ┌───────────────┬─────────────┬──────────────────────────────────────────────┐
@@ -58,3 +59,4 @@ $ nest info
       │ library       │ lib         │ Generate a new library within a monorepo     │
       │ sub-app       │ app         │ Generate a new application within a monorepo │
       │ resource      │ res         │ Generate a new CRUD resource                 │
+```
