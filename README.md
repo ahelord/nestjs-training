@@ -70,3 +70,5 @@ you to directly execute TypeScript on Node.js without precompiling.
 This is accomplished by hooking node's module loading APIs, 
 enabling it to be used seamlessly alongside other Node.js tools and libraries.
   
+# generate controller
+nest generate co location --flat
