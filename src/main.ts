@@ -7,5 +7,6 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.setLocal('nestjs', 'traning');
   await app.listen(3000);
+  console.log('listing on ' + (await app.getUrl()));
 }
 bootstrap();

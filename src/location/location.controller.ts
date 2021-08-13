@@ -1,8 +1,17 @@
 import { Controller, Get } from '@nestjs/common';
+import { LocationService } from './location.service';
 
-@Controller('location')
+@Controller('locations')
 export class LocationController {
-  @Get()
+  constructor(private readonly locationService: LocationService) {}
+
+  @Get('')
+  getLocations(): string[] {
+    const locations = this.locationService.listLocations();
+    return locations;
+  }
+
+  @Get('colombia')
   getLocation(): string {
     return 'Bogota';
   }

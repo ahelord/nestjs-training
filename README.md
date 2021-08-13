@@ -72,3 +72,9 @@ enabling it to be used seamlessly alongside other Node.js tools and libraries.
   
 # generate controller
 nest generate co location --flat
+
+# modules
+
+- reduce scope to big aplication, separate in modules, each module can be maintained by different person
+- each module has it own structure consisting of controllers and services and persistence layer
+- dont need moquito, we can strange construction like
