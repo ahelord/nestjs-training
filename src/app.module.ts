@@ -5,9 +5,10 @@ import { LocationModule } from './location/location.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { DatabaseModule } from './database/database.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
-  imports: [LocationModule, ConfigModule, DatabaseModule],
+  imports: [LocationModule, ConfigModule, DatabaseModule, CommonModule],
   controllers: [AppController],
   providers: [AppService, ConfigService],
 })
