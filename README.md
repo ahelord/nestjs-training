@@ -101,4 +101,5 @@ nest generate co location --flat
 - can create CommonModule and store something like mapping registry not related module. 
   see more https://www.martinfowler.com/eaaCatalog/registry.html (A well-known object that other objects can use to
   find common objects and services.)
-- store all mappings  
+- store all mappings
+
