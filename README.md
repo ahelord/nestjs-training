@@ -87,6 +87,8 @@ nest generate co location --flat
   Not all applications need DTO is especially usefull, is especially useful in two cases when will programming for enterprise 
   where API endpoint are fully specified and there is not elasticy and second case is where API changes a lot, all mappings is 
   the best way known for me. see more https://martinfowler.com/eaaCatalog/dataTransferObject.html
+- DTO keeps your business logic independent on API or other infrastructure and allow us to create an application following
+  domain driven design rules
   
 #Mapper
 - exist  in .NET package automapper can install equivalent package automapper
