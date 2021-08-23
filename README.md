@@ -105,3 +105,29 @@ nest generate co location --flat
   find common objects and services.)
 - store all mappings
 
+#Readonly mode
+- Prefix readonly is used to make a property as read-only. Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either need to be initialized at declaration or initialized inside the class constructor.
+  Example: ReadOnly Class Properties:
+```
+Example: ReadOnly Class Properties
+
+class Employee {
+readonly empCode: number;
+empName: string;
+
+    constructor(code: number, name: string)     {
+        this.empCode = code;
+        this.empName = name;
+    }
+}
+let emp = new Employee(10, "John");
+emp.empCode = 20; //Compiler Error
+emp.empName = 'Bill'; 
+```
+# git course Nest.js series  Marluan Espiritusanto Youtube
+
+- https://github.com/MarluanEspiritusanto/book-store-nestjs
+
+# git course The complete NestJS developer. Enterprise Node.js framework Dawid Dominiak Udemy 
+
+- https://github.com/dawiddominiak/nice-locations
