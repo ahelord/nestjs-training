@@ -7,9 +7,20 @@ import { ConfigService } from './config/config.service';
 import { DatabaseModule } from './database/database.module';
 import { CommonModule } from './common/common.module';
 import { ConfigKeys } from './config/config.keys';
+import { UserModule } from './user/user.module';
+import { BooksModule } from './books/books.module';
+import { RoleModule } from './role/role.module';
 
 @Module({
-  imports: [LocationModule, ConfigModule, DatabaseModule, CommonModule],
+  imports: [
+    LocationModule,
+    ConfigModule,
+    DatabaseModule,
+    CommonModule,
+    UserModule,
+    BooksModule,
+    RoleModule,
+  ],
   controllers: [AppController],
   providers: [AppService, ConfigService],
 })

@@ -131,3 +131,14 @@ emp.empName = 'Bill';
 # git course The complete NestJS developer. Enterprise Node.js framework Dawid Dominiak Udemy 
 
 - https://github.com/dawiddominiak/nice-locations
+
+# Migrations create
+
+- npm run typeorm:migration:generate -- -n nameMigrations
+
+#Migrations run
+- npm run typeorm:migration:run
+
+# Migrations generate
+
+- npm run typeorm:migration:generate -- -n updateDatabase
