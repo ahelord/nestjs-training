@@ -6,7 +6,7 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Users } from '../user/users.entity';
+import { User } from '../user/user.entity';
 @Entity('roles')
 export class Roles extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
@@ -15,6 +15,6 @@ export class Roles extends BaseEntity {
   @Column({ type: 'text', nullable: false })
   name: string;
 
-  @ManyToMany((type) => Users, (users) => users.roles)
-  users: Users[];
+  @ManyToMany((type) => User, (users) => users.roles)
+  users: User[];
 }

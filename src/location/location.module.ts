@@ -3,12 +3,12 @@ import { LocationController } from './location.controller';
 import { LocationService } from './location.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Location } from './location.entity';
-import { CommonModule } from '../common/common.module';
+import { SharedModule } from '../shared/shared.module';
 import { LocationMappingService } from './location-mapping.service';
 
 @Module({
   controllers: [LocationController],
   providers: [LocationService, LocationMappingService],
-  imports: [TypeOrmModule.forFeature([Location]), CommonModule],
+  imports: [TypeOrmModule.forFeature([Location]), SharedModule],
 })
 export class LocationModule {}

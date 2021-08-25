@@ -2,11 +2,13 @@ import {
   BaseEntity,
   Column,
   CreateDateColumn,
-  Entity, JoinColumn, ManyToOne,
+  Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Users } from '../user/users.entity';
+import { User } from '../user/user.entity';
 
 @Entity('favorite_books')
 export class FavoriteBooks extends BaseEntity {
@@ -16,8 +18,8 @@ export class FavoriteBooks extends BaseEntity {
   @Column({ type: 'varchar', nullable: false })
   name: string;
 
-  @ManyToOne((type) => Users, (users) => users.favoriteBooks)
-  user: Users;
+  @ManyToOne((type) => User, (users) => users.favoriteBooks)
+  user: User;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

@@ -5,21 +5,23 @@ import { LocationModule } from './location/location.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { DatabaseModule } from './database/database.module';
-import { CommonModule } from './common/common.module';
+import { SharedModule } from './shared/shared.module';
 import { ConfigKeys } from './config/config.keys';
 import { UserModule } from './user/user.module';
 import { BooksModule } from './books/books.module';
 import { RoleModule } from './role/role.module';
+import { PingModule } from './ping/ping.module';
 
 @Module({
   imports: [
     LocationModule,
     ConfigModule,
     DatabaseModule,
-    CommonModule,
+    SharedModule,
     UserModule,
     BooksModule,
     RoleModule,
+    PingModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],
@@ -31,9 +33,9 @@ import { RoleModule } from './role/role.module';
 export class AppModule {
   static port: number | string;
 
-  constructor(private readonly _configService: ConfigService) {
+  constructor(private readonly configService: ConfigService) {
     // se hace asi por si despues tenemos que utilizar las keys en otros lugares
     // no tener que ir uno a uno
-    AppModule.port = this._configService.getConfig(ConfigKeys.PORT);
+    AppModule.port = this.configService.getConfig(ConfigKeys.PORT);
   }
 }

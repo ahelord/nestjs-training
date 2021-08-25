@@ -13,5 +13,5 @@ export class MappingRegistryService {
     // is not best solution load in global
     return automapper.map(source, target, object) as T;
   }
-  // dont forget register services in common module
+  // dont forget register services in shared module
 }

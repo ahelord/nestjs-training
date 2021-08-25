@@ -100,7 +100,7 @@ nest generate co location --flat
   or Service/Domain layers. Concerns of one layer often conflict with concerns in another, so object-object mapping 
   leads to segregated models, where concerns for each layer can affect only types in that layer.
 - can help transform all DTO to entities and entities to DTO   
-- can create CommonModule and store something like mapping registry not related module. 
+- can create SharedModule and store something like mapping registry not related module. 
   see more https://www.martinfowler.com/eaaCatalog/registry.html (A well-known object that other objects can use to
   find common objects and services.)
 - store all mappings
@@ -142,3 +142,8 @@ emp.empName = 'Bill';
 # Migrations generate
 
 - npm run typeorm:migration:generate -- -n updateDatabase
+
+# Create scafolding crud
+
+- nest g resource
+- doc https://docs.nestjs.com/recipes/crud-generator 

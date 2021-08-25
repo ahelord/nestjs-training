@@ -16,7 +16,7 @@ import { FavoriteBooks } from '../books/favorite-books.entity';
 import { Roles } from '../role/role.entity';
 
 @Entity('users')
-export class Users extends BaseEntity {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
