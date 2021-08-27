@@ -21,22 +21,23 @@ export class UserService {
     if (!id) {
       throw new BadRequestException('id must be sent');
     }
-    const user: User = await this.userRepository.findOne(id);
+    const user: User = await this.userRepository.findOne({
+      where: {
+        id: id,
+      },
+    });
     if (!user) {
       throw new NotFoundException();
     }
     return this.mapperService.map<User, UserDto>(user, new UserDto());
   }
 
-  async getAll(id: number): Promise<UserDto> {
-    if (!id) {
-      throw new BadRequestException('id must be sent');
-    }
-    const user: User[] = await this.userRepository.find();
-    if (!user) {
-      throw new NotFoundException();
-    }
-    return this.mapperService.mapCollection<User, UserDto>(user, new UserDto());
+  async getAll(): Promise<UserDto[]> {
+    const users: User[] = await this.userRepository.find();
+    return this.mapperService.mapCollection<User, UserDto>(
+      users,
+      new UserDto(),
+    );
   }
 
   async create(user: User) {

@@ -134,7 +134,7 @@ emp.empName = 'Bill';
 
 # Migrations create
 
-- npm run typeorm:migration:generate -- -n nameMigrations
+- npm run typeorm:migration:create -- -n nameMigrations
 
 #Migrations run
 - npm run typeorm:migration:run
