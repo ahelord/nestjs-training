@@ -147,3 +147,5 @@ emp.empName = 'Bill';
 
 - nest g resource
 - doc https://docs.nestjs.com/recipes/crud-generator 
+
+
