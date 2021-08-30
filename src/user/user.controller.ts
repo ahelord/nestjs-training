@@ -14,8 +14,8 @@ import { UserDto } from './dto/user.dto';
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-  @Get()
-  async getUser(@Param() id: number): Promise<UserDto> {
+  @Get(':id')
+  async getUser(@Param('id') id: number): Promise<UserDto> {
     const user = await this.userService.get(id);
     return user;
   }
