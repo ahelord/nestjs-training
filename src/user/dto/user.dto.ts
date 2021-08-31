@@ -1,5 +1,4 @@
-import { isNotEmpty, IsNotEmpty } from 'class-validator';
-import { Roles } from '../../role/role.entity';
+import { IsNotEmpty } from 'class-validator';
 import { RoleType } from '../../role/role-type.enum';
 import { FavoriteBooks } from '../../books/favorite-books.entity';
 

@@ -8,6 +8,8 @@ import { UserRepository } from './user.repository';
 import { MapperService } from '../shared/mapper.service';
 import { UserDto } from './dto/user.dto';
 import { User } from './user.entity';
+import { getConnection } from 'typeorm';
+import { Roles } from '../role/role.entity';
 
 @Injectable()
 export class UserService {
@@ -32,15 +34,22 @@ export class UserService {
     return this.mapperService.map<User, UserDto>(user, new UserDto());
   }
 
-  async getAll(): Promise<UserDto[]> {
+  async getAll(): Promise<User[]> {
     const users: User[] = await this.userRepository.find();
-    return this.mapperService.mapCollection<User, UserDto>(
+    return users;
+    // este mapper no sirve bien
+    /*return this.mapperService.mapCollection<User, UserDto>(
       users,
       new UserDto(),
-    );
+    );*/
   }
 
   async create(user: User) {
+    const roleRepository = await getConnection().getRepository(Roles);
+    const roleGeneral = await roleRepository.findOne({
+      where: { name: 'GENERAL' },
+    });
+    user.roles = [roleGeneral];
     const userCreated: User = await this.userRepository.save(user);
     return this.mapperService.map<User, UserDto>(userCreated, new UserDto());
   }
