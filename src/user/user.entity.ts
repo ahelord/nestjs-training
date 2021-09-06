@@ -13,7 +13,7 @@ import {
 import { UserStatus } from './user-status.entity';
 import { JoinColumn } from 'typeorm';
 import { FavoriteBooks } from '../books/favorite-books.entity';
-import { Roles } from '../role/role.entity';
+import { Role } from '../role/entities/role.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -45,9 +45,9 @@ export class User extends BaseEntity {
   })
   favoriteBooks: FavoriteBooks[];
 
-  @ManyToMany((type) => Roles, (roles) => roles.users, { eager: true })
+  @ManyToMany((type) => Role, (roles) => roles.users, { eager: true })
   @JoinTable({ name: 'users_roles' })
-  roles: Roles[];
+  roles: Role[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

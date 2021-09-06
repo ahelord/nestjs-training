@@ -6,9 +6,9 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { User } from '../user/user.entity';
+import { User } from '../../user/user.entity';
 @Entity('roles')
-export class Roles extends BaseEntity {
+export class Role extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

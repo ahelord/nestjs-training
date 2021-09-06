@@ -9,7 +9,7 @@ import { MapperService } from '../shared/mapper.service';
 import { UserDto } from './dto/user.dto';
 import { User } from './user.entity';
 import { getConnection } from 'typeorm';
-import { Roles } from '../role/role.entity';
+import { Role } from '../role/entities/role.entity';
 
 @Injectable()
 export class UserService {
@@ -45,7 +45,7 @@ export class UserService {
   }
 
   async create(user: User) {
-    const roleRepository = await getConnection().getRepository(Roles);
+    const roleRepository = await getConnection().getRepository(Role);
     const roleGeneral = await roleRepository.findOne({
       where: { name: 'GENERAL' },
     });

@@ -9,8 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { ConfigKeys } from './config/config.keys';
 import { UserModule } from './user/user.module';
 import { BooksModule } from './books/books.module';
-import { RoleModule } from './role/role.module';
 import { PingModule } from './ping/ping.module';
+import { RoleModule } from './role/role.module';
 
 @Module({
   imports: [

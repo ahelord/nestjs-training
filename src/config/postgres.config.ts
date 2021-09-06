@@ -3,6 +3,7 @@ import { ConfigService } from './config.service';
 const configService = new ConfigService();
 
 export const DatabaseConfig = {
+  autoLoadEntities: true,
   type: 'postgres',
   host: configService.getConfig(ConfigKeys.POSTGRES_HOST),
   username: configService.getConfig(ConfigKeys.POSTGRES_USERNAME),
@@ -17,6 +18,7 @@ export const DatabaseConfig = {
   cli: {
     migrationsDir: 'src/database/migrations',
   },
+
 };
 
 export default DatabaseConfig;
